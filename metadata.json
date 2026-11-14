@@ -1,0 +1,6 @@
+{
+  "name": "Mission Architect",
+  "description": "End-to-end NASA space mission design and systems engineering simulator with interactive spacecraft assembly, live coupled telemetry, orbital trajectory simulation, and mishap diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
