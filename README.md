@@ -60,25 +60,6 @@ BlueprintCanvas    TelemetryStrip        TradeOffRadar         OrbitalSimulation
  CAD assembly)      & status glyphs)     (SVG chart & alerts)   crisis events & report)
 ```
 
-### File Breakdown
-
-- **`index.html` & `src/main.tsx`**: Mounts the React application into `#root` and loads `Chakra Petch`, `IBM Plex Sans`, and `IBM Plex Mono` fonts.
-- **`src/index.css`**: Configures Tailwind CSS v4 theme typography, tabular numeral formatting, and the `.blueprint-grid` background.
-- **`src/types/mission.ts`**: TypeScript interfaces for targets, components, launch vehicles, trajectories, telemetry output, crisis events, and mishap reports.
-- **`src/data/missionData.ts`**: Static catalog of planetary targets, spacecraft hardware specs, launch vehicles, transfer options, and scenario presets.
-- **`src/engine/systemsPhysics.ts`**: Core deterministic engineering engine:
-  - `computeMissionTelemetry()`: Couples subsystem mass, cost, inverse-square solar/DSN scaling, eclipse endurance, data backlog, thermal/radiation rules, and radar scores.
-  - `generateCrisisEvents()`: Generates flight anomalies tailored to the chosen destination and trajectory.
-  - `generateMishapReport()`: Evaluates flight telemetry to produce the final grade, root-cause findings, and NASA historical parallels.
-- **`src/App.tsx`**: Manages `MissionConfig` state, phase navigation (`target`, `spacecraft`, `trajectory`, `simulation`), and scenario presets.
-- **`src/components/ControlDeck.tsx`**: Renders the left-hand selection controls for destinations, spacecraft subsystems, rockets, and trajectories.
-- **`src/components/BlueprintCanvas.tsx`**: HTML5 2D `<canvas>` renderer that dynamically assembles every chosen part onto the spacecraft bus with animated signal/RF pulses, CAD dimension overlays, thermal map view, and mouse hover hit-testing.
-- **`src/components/TelemetryStrip.tsx`**: Displays live Launch Mass, Power Balance, DSN Downlink, and Mission Cost meters with `● Nominal`, `▲ Marginal`, and `✖ Critical` indicators.
-- **`src/components/TradeOffRadar.tsx`**: Inline SVG 5-axis radar chart plotting Science, Power, Environmental Safety, Comms, and Budget Efficiency.
-- **`src/components/TradeOffAdvisories.tsx`**: Displays real-time coupled warnings whenever subsystem constraints conflict.
-- **`src/components/OrbitalSimulation.tsx`**: Drives the timed simulation loop, renders the 3-stage ascent/cruise/orbit `<canvas>`, draws the live SVG Battery/Buffer/Science waveform chart, handles interactive crisis choices, and renders the post-mission report.
-
----
 
 ## 3. What Was Used to Build It
 
